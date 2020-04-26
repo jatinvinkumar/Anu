@@ -3,7 +3,7 @@ import { Link as RouterLink } from 'react-router-dom';
 import clsx from 'clsx';
 import PropTypes from 'prop-types';
 import { makeStyles } from '@material-ui/styles';
-import { AppBar, Toolbar, Badge, Hidden, IconButton, Button } from '@material-ui/core';
+import { AppBar, Toolbar, Badge, Hidden, IconButton, Button, Box } from '@material-ui/core';
 import MenuIcon from '@material-ui/icons/Menu';
 import NotificationsIcon from '@material-ui/icons/NotificationsOutlined';
 import InputIcon from '@material-ui/icons/Input';
@@ -12,7 +12,7 @@ import {connect} from 'react-redux';
 const useStyles = makeStyles(theme => ({
   root: {
     boxShadow: 'none',
-    background: 'none'
+    backgroundColor: 'white'
   },
   flexGrow: {
     flexGrow: 1
@@ -35,6 +35,7 @@ const Topbar = props => {
       {...rest}
       className={clsx(classes.root, className)}
     >
+      <Box boxShadow={3}>
       <Toolbar>
         <RouterLink to="/">
           <img
@@ -46,14 +47,14 @@ const Topbar = props => {
         <div className={classes.flexGrow} />
         <RouterLink to="/home">
           <Hidden mdDown>
-            <Button color="white" style={{color:'white'}}>
+            <Button color="primary">
               Home
             </Button>
           </Hidden>
         </RouterLink>
         <RouterLink to="/propertySearch">
           <Hidden mdDown>
-            <Button color="white" style={{color:'white'}}>
+            <Button color="primary">
               Search
             </Button>
           </Hidden>
@@ -61,8 +62,8 @@ const Topbar = props => {
         {auth.uid ? 
         <RouterLink to="/dashboard">
           <Hidden mdDown>
-            <Button color="white" style={{color:'white'}}>
-              Dashboard
+            <Button color="primary">
+              Community
             </Button>
           </Hidden>
         </RouterLink>
@@ -84,6 +85,7 @@ const Topbar = props => {
           </IconButton>
         </Hidden>
       </Toolbar>
+      </Box>
     </AppBar>
   );
 };

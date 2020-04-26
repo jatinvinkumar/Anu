@@ -52,6 +52,7 @@
     "react-redux-firebase": "^2.2.4",
     "react-router-dom": "^5.0.1",
     "react-scripts": "^3.0.1",
+    "react-typist": "^2.0.5",
     "react-window-size": "^1.2.2",
     "reactstrap": "^8.2.0",
     "recompose": "^0.30.0",
