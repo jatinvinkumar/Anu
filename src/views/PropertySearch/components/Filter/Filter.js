@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import { makeStyles } from '@material-ui/styles';
 import {
     Card,
+    CardContent,
     Button,
     Checkbox,
     FormControlLabel,
@@ -10,11 +11,22 @@ import {
     Collapse,
     Grid,
     Slider,
-    Typography
+    Typography,
+    List,
+    ListSubheader,
+    ListItem,
+    ListText,
+    ListItemText,
+    Paper,
+    ListItemSecondaryAction,
+    IconButton
   } from '@material-ui/core';
   import { UncontrolledCollapse, CardBody} from 'reactstrap'
 
   import {Autocomplete} from '@material-ui/lab';
+
+  import DeleteIcon from '@material-ui/icons/Delete';
+import { ContentBackspace } from 'material-ui/svg-icons';
 
   class Filter extends React.Component {
     constructor(props) {
@@ -24,7 +36,9 @@ import {
           numberOfGuests: 2,
           Tester: false,
           toggleFilters: false,
-          range: [0,100]
+          range: [0,100],
+          itemSearchText: "",
+          groceryList : ["Stawberries"]
         };
     
         this.handleInputChange = this.handleInputChange.bind(this);
@@ -43,12 +57,31 @@ import {
         console.log(this.state)
     }   
 
+    itemSearchTextChanged = (e) => {
+        this.setState({itemSearchText: e.target.value})
+    }
+
+    itemSearchItemDeleted = (event) => {
+        console.log(event.target.value)
+    }
+
     render(){
         const useStyles = makeStyles(theme => ({
             root: {
                 paddingTop: 56,
-                }
+            },
+            stickyList: {
+                width: '100%',
+                maxWidth: 360,
+                backgroundColor: theme.palette.background.paper,
+                position: 'relative',
+                overflow: 'auto',
+                maxHeight: 300,
+            },
+            typeFilter : {
+                width: 300,
             }
+        }
         ));
 
         const handleChange2 = (event, newValue) => {
@@ -56,6 +89,10 @@ import {
         };
         const defaultProps = {
             options: top100Films,
+            getOptionLabel: option => option.title,
+        };
+        const itemSearchProps = {
+            options: groceryItemList,
             getOptionLabel: option => option.title,
         };
         const flatProps = {
@@ -76,7 +113,17 @@ import {
             <Card style={{padding: 30, paddingTop: 0}} className={classes.root}>
                  <div fullWidth>
                     <Grid container spacing={4} justifyContent="space-between" fullWidth>
-                        <Grid item lg={3} xl={3} md={3} sm={6} xs={12}>
+                        <Grid item lg={12} xl={3} md={3} sm={6} xs={12}>
+                            <Autocomplete
+                                {...defaultProps}
+                                id="debug"
+                                debug
+                                renderInput={params => <TextField {...params} label="Activity Type" margin="normal" 
+                                    className={classes.typeFilter}
+                                    />}
+                            />
+                        </Grid>
+                        {/* <Grid item lg={3} xl={3} md={3} sm={6} xs={12}>
                             <Autocomplete
                                 {...defaultProps}
                                 id="debug"
@@ -102,19 +149,60 @@ import {
                                 
                                 renderInput={params => <TextField {...params} label="Neighborhood" margin="normal" fullWidth />}
                             />
-                        </Grid>
-                        <Grid item lg={3} xl={3} md={3} sm={6} xs={12}>
-                            <Autocomplete
-                                {...defaultProps}
-                                id="debug"
-                                debug
-                                
-                                renderInput={params => <TextField {...params} label="Neighborhood" margin="normal" fullWidth />}
-                            />
-                        </Grid>
+                        </Grid> */}
                     </Grid>
                     <Button id="toggler" style={{float: 'right', }} onClick={toggleMoreFilters}>More Filters</Button>
                     <br></br>
+                    <Autocomplete
+                        {...itemSearchProps}
+                        id="debug"
+                        debug
+                        freeSolo
+                        renderInput={params => <TextField {...params} label="Search..." margin="normal" 
+                            className="typeFilter"
+                            onChange={this.itemSearchTextChanged}
+                            onKeyUp={(event) => {
+                                if (event.key== 'Enter')
+                                    this.setState({  
+                                        groceryList: this.state.groceryList.concat([this.state.itemSearchText])
+                                    })
+                            }}
+                            />}
+                    />
+
+                    {/* Add the list of items */}
+                    
+                    <Paper style={{maxHeight: 200, overflow: 'auto'}}>
+                        <List>
+                            {this.state.groceryList.map((item, index) => 
+                                <ListItem>
+                        
+                                <ListItemText
+                                  primary={item}
+                                />
+                                <ListItemSecondaryAction >
+                                  <IconButton edge="end" aria-label="delete"
+                                        onClick={() => {
+                                            this.setState({
+                                                groceryList: this.state.groceryList.filter((x) => x != item)
+                                            })
+                                        }}
+                                        >
+                                    <DeleteIcon />
+                                  </IconButton>
+                                </ListItemSecondaryAction>
+                              </ListItem>
+                            )}
+                        </List>
+                    </Paper>
+
+                    {/* Search Button */}
+                                        
+                    <Button variant="contained" color="secondary" style={{marginTop: 20, alignSelf: 'center'}}>
+                        Search
+                    </Button>
+
+
                     <Collapse toggler='#toggler' in={this.state.toggleFilters}>
                     <Typography
                         className={classes.title}
@@ -176,6 +264,7 @@ import {
                         </Grid>
                     </Grid>
                     </Collapse>
+
                     <Typography
                         className={classes.title}
                         color="textSecondary"
@@ -201,10 +290,15 @@ import {
   }
 
   export default Filter;
+  const groceryItemList = [
+    { title: 'Eggs', year: 1994 },
+    { title: 'Milk', year: 1972 },
+    { title: 'Oranges', year: 1974 },
+  ];
 
   const top100Films = [
-    { title: 'The Shawshank Redemption', year: 1994 },
-    { title: 'The Godfather', year: 1972 },
+    { title: 'Groceries', year: 1994 },
+    { title: 'Recreational', year: 1972 },
     { title: 'The Godfather: Part II', year: 1974 },
     { title: 'The Dark Knight', year: 2008 },
     { title: '12 Angry Men', year: 1957 },

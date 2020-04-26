@@ -51,14 +51,14 @@ class PropertySearch extends Component {
             <Hidden smDown>
               <div style={{maxWidth:800}}>
                 <div style={{display:'flex', overflow:'hidden', overflowX: 'hidden'}}>
-                  <div className={makeStyles.root} style={{maxHeight: this.props.windowHeight - 75, overflow: 'auto', width:800}}>
+                  <div className={makeStyles.root} style={{maxHeight: this.props.windowHeight - 75, overflow: 'auto', width:this.props.windowWidth/4}}>
                     <Filter style={{padding:0}}></Filter>
                     <Container style={{padding:20, width:'100%'}}>
                       <PropertyList apartments={apartments}></PropertyList>
                     </Container>
                   </div>
                   <div>
-                    <MapContainer height={this.props.windowHeight-60} width={this.props.windowWidth-800}></MapContainer>
+                    <MapContainer height={this.props.windowHeight-60} width={this.props.windowWidth*(3/4)}></MapContainer>
                   </div>
                 </div>
                 </div>
