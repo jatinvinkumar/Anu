@@ -127,8 +127,8 @@ class Property extends Component {
               <Grid item lg={4}>
                 <Card style={{paddingTop: 20}}>
                   <div style={{width: 200, height: 100, margin: "auto"}}><img src={home} style={{objectFit:'cover', width: "100%", height: "100%", margin:"auto", }}></img></div>
-                  <Typography style={{fontSize:28, color:'#484848', fontWeight:8000, padding:10, marginBottom:0, paddingBottom:0, textAlign:'center'}} variant={'h1'}>See how Haven can help</Typography>
-                  <Typography style={{fontSize:18, color:'#484848', padding:10, paddingRight:20, paddingLeft:20, marginBottom:0, paddingBottom:0, textAlign:'center', maxWidth: 800}} variant={'h2'}><Box fontWeight="fontWeightLight">Haven has already helped hundreds of students find the perfect off campus housing. Start your search today!</Box></Typography>
+                  <Typography style={{fontSize:28, color:'#484848', fontWeight:8000, padding:10, marginBottom:0, paddingBottom:0, textAlign:'center'}} variant={'h1'}>Plan Ahead</Typography>
+                  <Typography style={{fontSize:18, color:'#484848', padding:10, paddingRight:20, paddingLeft:20, marginBottom:0, paddingBottom:0, textAlign:'center', maxWidth: 800}} variant={'h2'}><Box fontWeight="fontWeightLight">Find all the items you need and reduce unnecessary trips. We’ll let you know the best time to shop so you can avoid crowds and limited stock.</Box></Typography>
                   <div style={{ height: 100, width:100, margin: "auto", paddingTop: 20}}><Button style={{width:'100%'}} variant='outlined' color='primary'> Search</Button></div>
                 </Card>
               </Grid>
@@ -136,8 +136,8 @@ class Property extends Component {
               <Grid item lg={4}>
                   <Card style={{paddingTop: 20}}>
                     <div style={{width: 200, height: 100, margin: "auto"}}><img src={sell} style={{objectFit:'cover', width: "100%", height: "100%", margin:"auto", }}></img></div>
-                    <Typography style={{fontSize:28, color:'#484848', fontWeight:8000, padding:10, marginBottom:0, paddingBottom:0, textAlign:'center'}} variant={'h1'}>See how Haven can help</Typography>
-                    <Typography style={{fontSize:18, color:'#484848', padding:10, paddingRight:20, paddingLeft:20, marginBottom:0, paddingBottom:0, textAlign:'center', maxWidth: 800}} variant={'h2'}><Box fontWeight="fontWeightLight">Haven has already helped hundreds of students find the perfect off campus housing. Start your search today!</Box></Typography>
+                    <Typography style={{fontSize:28, color:'#484848', fontWeight:8000, padding:10, marginBottom:0, paddingBottom:0, textAlign:'center'}} variant={'h1'}>Explore Your Community</Typography>
+                    <Typography style={{fontSize:18, color:'#484848', padding:10, paddingRight:20, paddingLeft:20, marginBottom:0, paddingBottom:0, textAlign:'center', maxWidth: 800}} variant={'h2'}><Box fontWeight="fontWeightLight">Find supermarkets and small businesses that meet your needs. Connect with your community and find exciting opportunities!</Box></Typography>
                     <div style={{ height: 100, width:100, margin: "auto", paddingTop: 20}}><Button style={{width:'100%'}} variant='outlined' color='primary'> Search</Button></div>
                   </Card>
               </Grid>
@@ -145,8 +145,8 @@ class Property extends Component {
               <Grid item lg={4}>
                 <Card style={{paddingTop: 20}}>
                   <div style={{width: 200, height: 100, margin: "auto"}}><img src={rent} style={{objectFit:'cover', width: "100%", height: "100%", margin:"auto", }}></img></div>
-                  <Typography style={{fontSize:28, color:'#484848', fontWeight:8000, padding:10, marginBottom:0, paddingBottom:0, textAlign:'center'}} variant={'h1'}>See how Haven can help</Typography>
-                  <Typography style={{fontSize:18, color:'#484848', padding:10, paddingRight:20, paddingLeft:20, marginBottom:0, paddingBottom:0, textAlign:'center', maxWidth: 800}} variant={'h2'}><Box fontWeight="fontWeightLight">Haven has already helped hundreds of students find the perfect off campus housing. Start your search today!</Box></Typography>
+                  <Typography style={{fontSize:28, color:'#484848', fontWeight:8000, padding:10, marginBottom:0, paddingBottom:0, textAlign:'center'}} variant={'h1'}>Help Your Neighborhood</Typography>
+                  <Typography style={{fontSize:18, color:'#484848', padding:10, paddingRight:20, paddingLeft:20, marginBottom:0, paddingBottom:0, textAlign:'center', maxWidth: 800}} variant={'h2'}><Box fontWeight="fontWeightLight">Serve your neighborhood and the elderly by completing basic tasks. Become a trusted helper and gain badges/rewards.</Box></Typography>
                   <div style={{ height: 100, width:100, margin: "auto", paddingTop: 20}}><Button style={{width:'100%'}} variant='outlined' color='primary'> Search</Button></div>
                 </Card>
                 
