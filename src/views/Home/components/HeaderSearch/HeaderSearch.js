@@ -126,7 +126,7 @@ import {
                     <Typography style={{fontWeight:200, color:'#6A7280'}} variant={'h4'}>Find everything you need and reduce unnecessary movements to risk areas.</Typography>
                     <Grid style={{display:'flex'}} direction='row'>
                         <Grid item lg={8}> 
-                            <Box p={1} style={{ width: '100%', marginTop:0, paddingTop:30, marginLeft:0, paddingLeft: 0}}>
+                            <Box p={1} style={{ width: '100%', marginTop:0, paddingTop:0, marginLeft:0, paddingLeft: 0}}>
                                 <Autocomplete
                                     {...defaultProps}
                                     id="debug"
@@ -136,7 +136,7 @@ import {
                                 />
                             </Box>
                         </Grid>
-                        <Grid item>
+                        <Grid item lg={4}>
                         <Button variant="contained" color="secondary">
                             Secondary
                         </Button>
