@@ -2,7 +2,7 @@ import React from 'react';
 import clsx from 'clsx';
 import PropTypes from 'prop-types';
 import { makeStyles } from '@material-ui/styles';
-import { Card, CardContent, Grid, Typography, Avatar, Box, Button} from '@material-ui/core';
+import { Card, CardContent, Grid, Typography, Avatar, Box, Button, Container} from '@material-ui/core';
 import ArrowDownwardIcon from '@material-ui/icons/ArrowDownward';
 import MoneyIcon from '@material-ui/icons/Money';
 import Image from 'material-ui-image'
@@ -127,6 +127,23 @@ const PropertyList = props => {
             </Link>
           </Grid>
       ))}
+      <Container
+          className={clsx(classes.root,)} style={{marginTop:50, paddingBottom:50}}>
+            <Typography variant="body1">
+              &copy;{' '}
+              <Link
+                component="a"
+                href=""
+                target="_blank"
+              >
+                Myfi 2020
+              </Link>
+              {" All Rights Reserved"}
+            </Typography>
+            <Typography variant="caption">
+              Created with love for the environment. Let's tackle COVID-19 together!
+            </Typography>
+          </Container>
     </Grid>
   );
 };

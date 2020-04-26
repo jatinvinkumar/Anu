@@ -58,7 +58,7 @@ const Main = props => {
       />
       <main className={classes.content}>
         {children}
-        <Footer />
+       
       </main>
     </div>
   );

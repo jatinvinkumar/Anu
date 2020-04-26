@@ -153,9 +153,23 @@ class Property extends Component {
               </Grid>
             </Grid>
           </Container>
-          
-            
-      
+          <Container
+          className={clsx(classes.root,)} style={{marginTop:50, paddingBottom:50}}>
+            <Typography variant="body1">
+              &copy;{' '}
+              <Link
+                component="a"
+                href=""
+                target="_blank"
+              >
+                Myfi 2020
+              </Link>
+              {" All Rights Reserved"}
+            </Typography>
+            <Typography variant="caption">
+              Created with love for the environment. Let's tackle COVID-19 together!
+            </Typography>
+          </Container>
         </div>
       );
     };
