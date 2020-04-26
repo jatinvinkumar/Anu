@@ -90,41 +90,48 @@ const PropertyList = props => {
      </AwesomeSlider>
   )
 
+  const cards = [
+    {title: 'Rebuilding Community Garden', address: '2400 Nueces St', occasion: 'Aug 8th 8am', numPeople: 23, link: 'https://images.unsplash.com/photo-1461354464878-ad92f492a5a0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80'},
+    {title: 'Trash Cleanup', address: '1200 Rigler Dr', occasion: 'Aug 18th 6pm', numPeople: 31, link: 'https://images.unsplash.com/photo-1562684750-0553aea79845?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1651&q=80'},
+    {title: 'Build House For Underserved', address: '300 Velap Cr', occasion: 'Sep 4th 1pm', numPeople: 63, link: 'https://images.unsplash.com/photo-1482731215275-a1f151646268?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80'},
+    {title: 'Serve at Food Pantry', address: '300 Pardinger St', occasion: 'Sep 23th 4pm', numPeople: 18, link: 'https://images.unsplash.com/photo-1558202257-f0ce3681fd5c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60'}
+  ]
+
   return (
       <Grid container spacing={4}>
-        {data.map((d, index) => (
+        {cards.map((d, index) => (
           <Grid item lg={6} md={6} xl={6} xs={12}>
-            <Link to={'/property/' + d.id} key={d.id}>
-                  <Card 
-                        //{...rest}
-                        className={clsx(classes.root2)}
-                      >
-                        <div style={{overflow: 'hidden', position: 'relative'}}>
-                          <img src={home5} style={{objectFit:'cover', width: "100%", height: "100%"}}></img>
-                        </div>
-                        <div style={{display:'flex', width:'100%', justifyContent:'space-between' }}>
-                          <div>
-                            <Typography style={{fontSize:18,color: '#484848', textAlign: 'left', padding: 10, paddingBottom: 0}}  variant={'h5'}>Rebuilding Community Garden</Typography>
-                            <Typography style={{fontSize:12, color:'#484848', padding:10, marginBottom:0, paddingBottom:10, paddingTop:0, textAlign:'left', maxWidth: 800}} variant={'h5'}><Box fontWeight="fontWeightLight">2400 Nueces St</Box></Typography>
-                          </div>
-                          <div style={{display: 'flex'}}>
-                            <Typography style={{fontSize:14,color: '#484848', textAlign: 'right', padding: 10, paddingBottom: 0, marginRight:0}}  variant={'h5'}>Aug 8th 4pm</Typography>
-                          </div>
-                          
+            <a href= "https://www.facebook.com/MYFY-Volunteering-Page-115482753475697">
+            <Card 
+                  //{...rest}
+                  className={clsx(classes.root2)}
+                >
+                  <div style={{overflow: 'hidden', position: 'relative'}}>
+                    <img src={d.link} style={{objectFit:'cover', width: "100%", height: "100%"}}></img>
+                  </div>
+                  <div style={{display:'flex', width:'100%', justifyContent:'space-between' }}>
+                    <div>
+                      <Typography style={{fontSize:18,color: '#484848', textAlign: 'left', padding: 10, paddingBottom: 0}}  variant={'h5'}>{d.title}</Typography>
+  <Typography style={{fontSize:12, color:'#484848', padding:10, marginBottom:0, paddingBottom:10, paddingTop:0, textAlign:'left', maxWidth: 800}} variant={'h5'}><Box fontWeight="fontWeightLight">{d.address}</Box></Typography>
+                    </div>
+                    <div style={{display: 'flex'}}>
+  <Typography style={{fontSize:14,color: '#484848', textAlign: 'right', padding: 10, paddingBottom: 0, marginRight:0}}  variant={'h5'}>{d.occasion}</Typography>
+                    </div>
+                    
 
-                        </div>
-                        
-                        <div style={{display:'flex', padding:10, paddingTop:0, verticalAlign:'middle', alignItems:'center', justifyContent:'space-between'}}>
-                        <div style={{display: 'flex', verticalAlign:'middle', alignItems:'center'}}><PeopleIcon color={'#484848'} style={{opacity:0.6, color:'#484848'}}/> <Typography style={{fontSize:14, color:'#484848', padding:10, marginBottom:0, paddingBottom:0, paddingTop:0, textAlign:'left', maxWidth: 800}} variant={'h5'}><Box fontWeight="fontWeightMedium">24 people are going</Box></Typography></div>
-                          <Button variant="outlined" color="secondary">
-                            Interested
-                          </Button>
-                        </div>
-                        <div style={{ zIndex: 101, backgroundColor: "#3F51B5"}}>
-                          {/* <Typography style={{color: 'white', textAlign: '#484848', padding: 10}}  variant={'h5'}>Check Availablity</Typography> */}
-                        </div>
-                    </Card>
-            </Link>
+                  </div>
+                  
+                  <div style={{display:'flex', padding:10, paddingTop:0, verticalAlign:'middle', alignItems:'center', justifyContent:'space-between'}}>
+                  <div style={{display: 'flex', verticalAlign:'middle', alignItems:'center'}}><PeopleIcon color={'#484848'} style={{opacity:0.6, color:'#484848'}}/> <Typography style={{fontSize:14, color:'#484848', padding:10, marginBottom:0, paddingBottom:0, paddingTop:0, textAlign:'left', maxWidth: 800}} variant={'h5'}><Box fontWeight="fontWeightMedium">{d.numPeople} people are going</Box></Typography></div>
+                    <Button variant="outlined" color="secondary">
+                      Interested
+                    </Button>
+                  </div>
+                  <div style={{ zIndex: 101, backgroundColor: "#3F51B5"}}>
+                    {/* <Typography style={{color: 'white', textAlign: '#484848', padding: 10}}  variant={'h5'}>Check Availablity</Typography> */}
+                  </div>
+              </Card>
+            </a>
           </Grid>
       ))}
       <Container

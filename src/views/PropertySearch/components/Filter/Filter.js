@@ -39,7 +39,7 @@ import { ContentBackspace } from 'material-ui/svg-icons';
           range: [0,100],
           itemSearchText: "",
           searchCompleted: false,
-          groceryList : ["Stawberries"]
+          groceryList : []
         };
     
         this.handleInputChange = this.handleInputChange.bind(this);
@@ -171,10 +171,20 @@ import { ContentBackspace } from 'material-ui/svg-icons';
                     />
 
                     {/* Add the list of items */}
+
+                    <Typography gutterBottom variant="h5" component="h2">
+                        Your Grocery List:
+                    </Typography>
                     
                     <Paper style={{maxHeight: 200, overflow: 'auto'}}>
                         <List>
-                            {this.state.groceryList.map((item, index) => 
+                            {
+                            (this.state.groceryList.length == 0) ?
+                            <Typography gutterBottom variant="h5" component="h2" style={{paddingTop: 10, paddingLeft: 10}}>
+                                You have no items yet!
+                            </Typography>
+                            :
+                            this.state.groceryList.map((item, index) => 
                                 <ListItem>
                         
                                 <ListItemText
