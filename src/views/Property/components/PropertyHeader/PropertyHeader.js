@@ -2,7 +2,8 @@ import React from 'react';
 import clsx from 'clsx';
 import PropTypes from 'prop-types';
 import { makeStyles } from '@material-ui/styles';
-import { Card, CardContent, Grid, Typography, Avatar, Box} from '@material-ui/core';
+import { Card, CardContent, Grid, Typography, Avatar, Box,
+          CardActionArea, CardMedia} from '@material-ui/core';
 import ArrowDownwardIcon from '@material-ui/icons/ArrowDownward';
 import MoneyIcon from '@material-ui/icons/Money';
 import Image from 'material-ui-image'
@@ -58,6 +59,9 @@ const useStyles = makeStyles(theme => ({
     typography: {
       fontSize: 1200,
     },
+    media: {
+      height: 140,
+    }
   }));
 
   const responsive = {
@@ -80,6 +84,12 @@ const useStyles = makeStyles(theme => ({
     },
   };
 
+  const groceryItemList = [
+    { title: 'Grade A Horizon Eggs', price: 3.63, imageURL: 'https://s3.amazonaws.com/grazecart/dutchmeadowsfarm/images/1496424467_5931a0134b6b8.jpg' },
+    { title: 'Cage Free White Organic Eggs', price: 1.78, imageURL: 'https://media.treehugger.com/assets/images/2018/04/white_eggs_in_carton.jpg.860x0_q70_crop-scale.jpg' },
+    { title: 'Cuties Clementine Oranges', price: 4.17, imageURL: 'https://www.kroger.com/product/images/large/front/0005410722101' },
+  ];
+
 const PropertyHeader = props => {
     const { className, ...rest } = props;
     const data = ['one', 'two', 'three', 'four'];
@@ -92,11 +102,29 @@ const PropertyHeader = props => {
         draggable={false}
         keyBoardControl={true}
         focusOnSelect={true}
-        style={{maxHeight:500}}>
-          <div style={{overflow:'hidden', maxWidth:500, paddingRight:5}}><Image src={testPhoto2} style={{objectFit:''}}></Image></div>
-          <div style={{overflow:'hidden', maxWidth:500,  paddingRight:5}}><Image src={testPhoto}></Image></div>
-          <div style={{overflow:'hidden', maxWidth:500,  paddingRight:5}}><Image src={testPhoto}></Image></div>
-          <div style={{overflow:'hidden', maxWidth:500,}}><Image src={testPhoto}></Image></div>
+        style={{maxHeight:800}}>
+          {
+            groceryItemList.map((item,index) => {
+              return (
+                <Card className={classes.root} style={{marginRight: 30}}>
+                <CardActionArea>
+                  <CardMedia
+                    className={classes.media}
+                    image={item.imageURL}
+                  />
+                  <CardContent>
+                    <Typography gutterBottom variant="h5" component="h2">
+                      {item.title}
+                    </Typography>
+                    <Typography variant="body2" color="textSecondary" component="p">
+                      Price: ${item.price}
+                    </Typography>
+                  </CardContent>
+                </CardActionArea>
+              </Card>
+              )
+            })
+          }
       </Carousel>
     )
         

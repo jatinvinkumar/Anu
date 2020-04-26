@@ -38,6 +38,7 @@ import { ContentBackspace } from 'material-ui/svg-icons';
           toggleFilters: false,
           range: [0,100],
           itemSearchText: "",
+          searchCompleted: false,
           groceryList : ["Stawberries"]
         };
     
@@ -151,7 +152,6 @@ import { ContentBackspace } from 'material-ui/svg-icons';
                             />
                         </Grid> */}
                     </Grid>
-                    <Button id="toggler" style={{float: 'right', }} onClick={toggleMoreFilters}>More Filters</Button>
                     <br></br>
                     <Autocomplete
                         {...itemSearchProps}
@@ -198,74 +198,15 @@ import { ContentBackspace } from 'material-ui/svg-icons';
 
                     {/* Search Button */}
                                         
-                    <Button variant="contained" color="secondary" style={{marginTop: 20, alignSelf: 'center'}}>
+                    <Button variant="contained" color="secondary" style={{marginTop: 20, alignSelf: 'center'}}
+                        onClick={() => {
+                            this.props.searchClicked()
+                        }}
+                        >
                         Search
                     </Button>
 
-
-                    <Collapse toggler='#toggler' in={this.state.toggleFilters}>
-                    <Typography
-                        className={classes.title}
-                        color="textSecondary"
-                        gutterBottom
-                        variant="body1"
-                        >
-                        Amenities
-                    </Typography>
-                    <Grid container spacing={1}>
-                        <Grid  item lg={3} sm={4} xl={3} xs={12}>
-                            <FormControlLabel
-                            control={<Checkbox name="Tester" onChange={handleChange('Tester')} value="Jatin"/>}
-                            label="Hello"
-                            onChange={this.handleChange}
-                            />
-                        </Grid>
-                        <Grid  item lg={3} sm={4} xl={3} xs={12}>
-                            <FormControlLabel
-                            control={<Checkbox name="Tester" onChange={handleChange('Tester')} value="Jatin"/>}
-                            label="Hello"
-                            onChange={this.handleChange}
-                            />
-                        </Grid>
-                        <Grid  item lg={3} sm={4} xl={3} xs={12}>
-                            <FormControlLabel
-                            control={<Checkbox name="Tester" onChange={handleChange('Tester')} value="Jatin"/>}
-                            label="Hello"
-                            onChange={this.handleChange}
-                            />
-                        </Grid>
-                        <Grid  item lg={3} sm={4} xl={3} xs={12}>
-                            <FormControlLabel
-                            control={<Checkbox name="Tester" onChange={handleChange('Tester')} value="Jatin"/>}
-                            label="Hello"
-                            onChange={this.handleChange}
-                            />
-                        </Grid>
-                        <Grid  item lg={3} sm={4} xl={3} xs={12}>
-                            <FormControlLabel
-                            control={<Checkbox name="Tester" onChange={handleChange('Tester')} value="Jatin"/>}
-                            label="Hello"
-                            onChange={this.handleChange}
-                            />
-                        </Grid>
-                        <Grid  item lg={3} sm={4} xl={3} xs={12}>
-                            <FormControlLabel
-                            control={<Checkbox name="Tester" onChange={handleChange('Tester')} value="Jatin"/>}
-                            label="Hello"
-                            onChange={this.handleChange}
-                            />
-                        </Grid>
-                        <Grid  item lg={3} sm={4} xl={3} xs={12}>
-                            <FormControlLabel
-                            control={<Checkbox name="Tester" onChange={handleChange('Tester')} value="Jatin"/>}
-                            label="Hello"
-                            onChange={this.handleChange}
-                            />
-                        </Grid>
-                    </Grid>
-                    </Collapse>
-
-                    <Typography
+                    {/* <Typography
                         className={classes.title}
                         color="textSecondary"
                         gutterBottom
@@ -280,7 +221,7 @@ import { ContentBackspace } from 'material-ui/svg-icons';
                         valueLabelDisplay="auto"
                         aria-labelledby="range-slider"
                         
-                    />
+                    />  */}
                     
                  </div>
             </Card>
@@ -291,9 +232,9 @@ import { ContentBackspace } from 'material-ui/svg-icons';
 
   export default Filter;
   const groceryItemList = [
-    { title: 'Eggs', year: 1994 },
-    { title: 'Milk', year: 1972 },
-    { title: 'Oranges', year: 1974 },
+    { title: 'Grade A Horizon Eggs', price: 3.63, imageURL: 'https://s3.amazonaws.com/grazecart/dutchmeadowsfarm/images/1496424467_5931a0134b6b8.jpg' },
+    { title: 'Cage Free White Organic Eggs', price: 1.78, imageURL: 'https://media.treehugger.com/assets/images/2018/04/white_eggs_in_carton.jpg.860x0_q70_crop-scale.jpg' },
+    { title: 'Cuties Clementine Oranges', price: 4.17, imageURL: 'https://www.kroger.com/product/images/large/front/0005410722101' },
   ];
 
   const top100Films = [
