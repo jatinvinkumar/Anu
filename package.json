@@ -60,6 +60,7 @@
     "redux-firestore": "^0.12.0",
     "redux-thunk": "^2.3.0",
     "typeface-roboto": "0.0.75",
+    "typewriter-effect": "^2.13.0",
     "underscore": "^1.9.1",
     "uuid": "^3.3.2",
     "validate.js": "^0.13.1",

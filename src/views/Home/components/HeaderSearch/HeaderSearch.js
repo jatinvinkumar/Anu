@@ -37,6 +37,7 @@ import {
   import { stat } from 'fs';
   import Filter from '../Filter'
   import Typewriter from 'typewriter-effect';
+
   class HeaderSearch extends React.Component {
     constructor(props) {
         super(props);
