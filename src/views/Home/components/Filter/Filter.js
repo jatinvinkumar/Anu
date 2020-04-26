@@ -97,7 +97,7 @@ import { stat } from 'fs';
        
         return(
             <Box boxShadow={10} style={{maxWidth:400}}>
-                <Card style={{padding: 30, paddingTop: 10, paddingBottom:10, maxWidth:500, fontFamily:'RobotoCondensed-Bold.ttf'}} className={classes.root}>
+                <Card style={{padding: 30, paddingTop: 10, paddingBottom:10, maxWidth:500}} className={classes.root}>
                  <div >
                  <Grid container spacing={1} style={{padding:0}} direction='column'>
                  <Typography style={{fontSize:34, color:'#484848', fontWeight:8000, padding:10, marginBottom:0, paddingBottom:0}} variant={'h1'}>Find home sweet home with Haven.</Typography>

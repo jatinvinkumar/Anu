@@ -39,20 +39,14 @@ const Routes = props => {
         from="/"
         to="/home"
       />
-      {auth.uid ?  <Route
+      { <Route
       //component={DashboardView}
         exact
         layout={MainLayout}
         path="/dashboard" 
         render={(props) => <MainLayout><DashboardView {...props} isAuthed={true} /></MainLayout>}
-      />: <Redirect exact from="/dashboard"to={"/sign-in"}></Redirect>}
-      {auth.uid ?  <Route
-      //component={DashboardView}
-        exact
-        layout={MainLayout}
-        path="/dashboard/applications/:id" 
-        render={(props) => <MainLayout><DashboardView {...props} isAuthed={true} /></MainLayout>}
-      />: <Redirect exact from="/dashboard/applications/:id"to={"/sign-in"}></Redirect>}
+      />}
+      
        <RouteWithLayout
         component={PropertySearchView}
         exact

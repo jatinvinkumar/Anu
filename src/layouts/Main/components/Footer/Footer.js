@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import clsx from 'clsx';
 import { makeStyles } from '@material-ui/styles';
-import { Typography, Link } from '@material-ui/core';
+import { Typography, Link, Container } from '@material-ui/core';
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -16,26 +16,25 @@ const Footer = props => {
   const classes = useStyles();
 
   return (
-    <div
+    <Container
       {...rest}
-      className={clsx(classes.root, className)}
+      className={clsx(classes.root, className)} style={{marginLeft:270}}
     >
       <Typography variant="body1">
         &copy;{' '}
         <Link
           component="a"
-          href="https://devias.io/"
+          href=""
           target="_blank"
         >
-          Devias IO
+          Myfi 2020
         </Link>
-        . 2019
+        {" All Rights Reserved"}
       </Typography>
       <Typography variant="caption">
-        Created with love for the environment. By designers and developers who
-        love to work together in offices!
+        Created with love for the environment. Let's tackle COVID-19 together!
       </Typography>
-    </div>
+    </Container>
   );
 };
 

@@ -10,6 +10,7 @@ import { Amenities, Application } from '..';
 import { Grid, Card, Divider} from '@material-ui/core';
 import Applications from '../Applications';
 import { Password } from 'views/Settings/components';
+import PropertyList from '../PropertyList';
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -56,24 +57,14 @@ function viewHandler(id){
     if(apply){
         return (
             <div>
-                <Typography
-                    color="textSecondary"
-                    gutterBottom
-                    variant="h3"
-                >
-                    Applications
-                </Typography>
-                <Typography
-                    color="textSecondary"
-                    gutterBottom
-                    variant="h5"
-                    style={{fontWeight:400}}
-                >
-                    Manage your recieved Applications
-                </Typography>
+                <div style={{maxWidth:600, margin:"auto"}}>
+                  <Typography style={{fontWeight:500, color:'#1A64F2', padding:10, marginTop: 20, marginBottom:0, paddingBottom:0, textAlign:'center', maxWidth: 600}} variant={'h4'}><Box>Stronger As One</Box></Typography>
+                  <Typography style={{fontSize:34, fontWeight:900, padding:10, marginBottom:0, paddingBottom:0, textAlign:'center'}} variant={'h1'}>Bring the Community Together.</Typography>
+                  <Typography style={{fontWeight:1, color:'#6A7280', padding:10, marginBottom:0, paddingBottom:10, textAlign:'center', maxWidth: 600}} variant={'h4'}><Box>We want to reduce people’s exposure to the COVID-19 by letting everyone know whether the items they’re looking for are available in their nearest supermarket or not.</Box></Typography>
+                </div>
                 <Divider />
                 &nbsp;
-                <Applications/>
+                <PropertyList></PropertyList>
             </div>
         );
     } else {
@@ -124,10 +115,8 @@ const TabBar = props => {
             <Grid item lg={2}/>
             <Grid item lg={8} style={{}}>
             <Tabs value={value} onChange={handleChange} aria-label="simple tabs example">
-                <Tab label="Applications" {...a11yProps(0)} />
-                <Tab label="Wishlist" {...a11yProps(1)} />
-                <Tab label="Profile" {...a11yProps(2)} />
-                <Tab label="Account" {...a11yProps(3)} />
+                <Tab label="Projects" {...a11yProps(0)} />
+                <Tab label="Add New" {...a11yProps(1)} />
             </Tabs>
             </Grid>
         </Grid>

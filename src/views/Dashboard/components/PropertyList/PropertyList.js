@@ -2,7 +2,7 @@ import React from 'react';
 import clsx from 'clsx';
 import PropTypes from 'prop-types';
 import { makeStyles } from '@material-ui/styles';
-import { Card, CardContent, Grid, Typography, Avatar, Box} from '@material-ui/core';
+import { Card, CardContent, Grid, Typography, Avatar, Box, Button} from '@material-ui/core';
 import ArrowDownwardIcon from '@material-ui/icons/ArrowDownward';
 import MoneyIcon from '@material-ui/icons/Money';
 import Image from 'material-ui-image'
@@ -11,6 +11,15 @@ import not_found from './not_found.png'
 import AwesomeSlider from 'react-awesome-slider';
 import AwesomeSliderStyles from 'react-awesome-slider/src/styled/scale-out-animation';
 import { shadows } from '@material-ui/system';
+import { Link } from 'react-router-dom'
+import home5 from './brian-yurasits-7lzc2Yg-oVM-unsplash.jpg'
+
+
+import Bed from '@material-ui/icons/Hotel';
+import Bath from '@material-ui/icons/Bathtub';
+import Walk from '@material-ui/icons/DirectionsWalk'
+import ScheduleIcon from '@material-ui/icons/Schedule';
+import PeopleIcon from '@material-ui/icons/People';
 const useStyles = makeStyles(theme => ({
   root: {
     height: '100%'
@@ -63,7 +72,7 @@ const useStyles = makeStyles(theme => ({
 
 const PropertyList = props => {
   const { className, ...rest } = props;
-  const data = ['one', 'two', 'three', 'four'];
+  const data = ['one', 'two', 'three', 'four', 'j', 'k', 'thrkee', 'k'];
   const classes = useStyles();
 
   const slider = (
@@ -85,29 +94,37 @@ const PropertyList = props => {
       <Grid container spacing={4}>
         {data.map((d, index) => (
           <Grid item lg={6} md={6} xl={6} xs={12}>
-              <Card 
-                {...rest}
-                className={clsx(classes.root, className)}
-                style={{}}
-              >
-                <div style={{overflow: 'hidden', position: 'relative'}}>
-                  {slider}
-                  <div className={classes.priceDiv} style={{display:'flex', zIndex: 100,backgroundColor: 'rgba(0,0,0,0.5)', color: 'white', borderRadius: 8}}>
-                    <Typography style={{color: 'white'}} variant={'body1'}>from </Typography>
-                    &nbsp;
-                    <Typography style={{color: 'white'}} variant={'h6'}> $1,000 </Typography>
-                    &nbsp;
-                    <Typography style={{color: 'white'}} variant={'body1'}> per month</Typography>
-                  </div>
-                  <div className={classes.placeDiv} style={{zIndex: 100,backgroundColor: 'rgba(0,0,0,0.5)', color: 'white', borderRadius: 8}}>
-                    <Typography style={{color: 'white'}} variant={'h4'}> Hill Top </Typography>
-                    <Typography style={{color: 'white'}} variant={'body1'}>122 Geimen Ave</Typography>
-                  </div>
-                </div>
-                <div style={{ zIndex: 101, backgroundColor: "#ff6600"}}>
-                  <Typography style={{color: 'white', textAlign: 'center', padding: 10}}  variant={'h5'}>Check Availablity</Typography>
-                </div>
-              </Card>
+            <Link to={'/property/' + d.id} key={d.id}>
+                  <Card 
+                        //{...rest}
+                        className={clsx(classes.root2)}
+                      >
+                        <div style={{overflow: 'hidden', position: 'relative'}}>
+                          <img src={home5} style={{objectFit:'cover', width: "100%", height: "100%"}}></img>
+                        </div>
+                        <div style={{display:'flex', width:'100%', justifyContent:'space-between' }}>
+                          <div>
+                            <Typography style={{fontSize:18,color: '#484848', textAlign: 'left', padding: 10, paddingBottom: 0}}  variant={'h5'}>Rebuilding Community Garden</Typography>
+                            <Typography style={{fontSize:12, color:'#484848', padding:10, marginBottom:0, paddingBottom:10, paddingTop:0, textAlign:'left', maxWidth: 800}} variant={'h5'}><Box fontWeight="fontWeightLight">2400 Nueces St</Box></Typography>
+                          </div>
+                          <div style={{display: 'flex'}}>
+                            <Typography style={{fontSize:14,color: '#484848', textAlign: 'right', padding: 10, paddingBottom: 0, marginRight:0}}  variant={'h5'}>Aug 8th 4pm</Typography>
+                          </div>
+                          
+
+                        </div>
+                        
+                        <div style={{display:'flex', padding:10, paddingTop:0, verticalAlign:'middle', alignItems:'center', justifyContent:'space-between'}}>
+                        <div style={{display: 'flex', verticalAlign:'middle', alignItems:'center'}}><PeopleIcon color={'#484848'} style={{opacity:0.6, color:'#484848'}}/> <Typography style={{fontSize:14, color:'#484848', padding:10, marginBottom:0, paddingBottom:0, paddingTop:0, textAlign:'left', maxWidth: 800}} variant={'h5'}><Box fontWeight="fontWeightMedium">24 people are going</Box></Typography></div>
+                          <Button variant="outlined" color="secondary">
+                            Interested
+                          </Button>
+                        </div>
+                        <div style={{ zIndex: 101, backgroundColor: "#3F51B5"}}>
+                          {/* <Typography style={{color: 'white', textAlign: '#484848', padding: 10}}  variant={'h5'}>Check Availablity</Typography> */}
+                        </div>
+                    </Card>
+            </Link>
           </Grid>
       ))}
     </Grid>

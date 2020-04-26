@@ -115,11 +115,12 @@ class Property extends Component {
     const classes = makeStyles
     console.log('props1: ', this.props)
       return (
-        <div style={{ marginTop: -80}}>
+        <div style={{ marginTop: -80,}}>
           <HeaderSearch></HeaderSearch>
-          <div style={{maxWidth:800, margin:"auto"}}>
-            <Typography style={{fontSize:34, color:'#484848', fontWeight:8000, padding:10, marginBottom:0, paddingBottom:0, marginTop: 75, textAlign:'center'}} variant={'h1'}>See how Haven can help</Typography>
-            <Typography style={{fontSize:18, color:'#484848', padding:10, marginBottom:0, paddingBottom:0, textAlign:'center', maxWidth: 800}} variant={'h2'}><Box fontWeight="fontWeightMedium">Haven has already helped hundreds of students find the perfect off campus housing. Start your search today!</Box></Typography>
+          <div style={{maxWidth:600, margin:"auto"}}>
+            <Typography style={{fontWeight:500, color:'#1A64F2', padding:10, marginTop: 75, marginBottom:0, paddingBottom:0, textAlign:'center', maxWidth: 600}} variant={'h4'}><Box>How it works?</Box></Typography>
+            <Typography style={{fontSize:34, fontWeight:900, padding:10, marginBottom:0, paddingBottom:0, textAlign:'center'}} variant={'h1'}>A Safer Way to Shop.</Typography>
+            <Typography style={{fontWeight:1, color:'#6A7280', padding:10, marginBottom:0, paddingBottom:0, textAlign:'center', maxWidth: 600}} variant={'h4'}><Box>We want to reduce people’s exposure to the COVID-19 by letting everyone know whether the items they’re looking for are available in their nearest supermarket or not.</Box></Typography>
           </div>
           <Container style={{marginTop: 50, margin:'auto'}}>
             <Grid container style={{maxWidth:1000, margin:"auto", marginBottom:0}} spacing={4 }>
