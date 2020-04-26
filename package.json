@@ -1,0 +1,72 @@
+{
+  "name": "react-material-dashboard",
+  "author": "DeviasIO",
+  "email": "contact@devias.io",
+  "licence": "MIT",
+  "version": "0.3.0",
+  "private": false,
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "dependencies": {
+    "@material-ui/core": "^4.2.1",
+    "@material-ui/icons": "^4.2.1",
+    "@material-ui/lab": "^4.0.0-alpha.39",
+    "@material-ui/styles": "^4.2.1",
+    "chart.js": "^2.8.0",
+    "clsx": "^1.0.4",
+    "firebase": "^7.8.1",
+    "google-maps-react": "^2.0.2",
+    "history": "^4.9.0",
+    "material-ui": "^0.20.2",
+    "material-ui-image": "^3.2.2",
+    "moment": "^2.24.0",
+    "node-sass": "^4.12.0",
+    "prop-types": "^15.7.2",
+    "react": "^16.8.6",
+    "react-awesome-slider": "^3.1.2",
+    "react-chartjs-2": "^2.7.6",
+    "react-dom": "^16.8.6",
+    "react-google-maps": "^9.4.5",
+    "react-multi-carousel": "^2.5.0",
+    "react-perfect-scrollbar": "^1.5.3",
+    "react-redux": "^5.1.1",
+    "react-redux-firebase": "^2.2.4",
+    "react-router-dom": "^5.0.1",
+    "react-scripts": "^3.0.1",
+    "react-window-size": "^1.2.2",
+    "reactstrap": "^8.2.0",
+    "recompose": "^0.30.0",
+    "redux": "^4.0.5",
+    "redux-firestore": "^0.12.0",
+    "redux-thunk": "^2.3.0",
+    "typeface-roboto": "0.0.75",
+    "underscore": "^1.9.1",
+    "uuid": "^3.3.2",
+    "validate.js": "^0.13.1"
+  },
+  "devDependencies": {
+    "prettier": "^1.17.1",
+    "prettier-eslint": "^8.8.2",
+    "prettier-eslint-cli": "^4.7.1",
+    "typescript": "^3.5.1"
+  }
+}
